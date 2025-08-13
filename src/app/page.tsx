@@ -1,103 +1,112 @@
+import Link from "next/link";
 import Image from "next/image";
+import Foreword from "@/components/Foreword";
+import Testimonials from "@/components/Testimonials";
+
+const cards = [
+  {
+    title: "UI components",
+    description: "Build interactive UI components with real-time preview and tests.",
+    href: "/challenges",
+  },
+  {
+    title: "JavaScript functions",
+    description: "Practice core JS problems with edge-case driven tests.",
+    href: "/learn",
+  },
+  {
+    title: "System design",
+    description: "Learn front end system design patterns with tradeoffs.",
+    href: "/learn",
+  },
+  {
+    title: "Quiz",
+    description: "Check your understanding with quick quizzes across topics.",
+    href: "/learn",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden">
+      {/* subtle radial glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-32 -left-24 h-[32rem] w-[32rem] rounded-full" style={{ backgroundColor: '#00345922', filter: 'blur(64px)' }} />
+        <div className="absolute -top-48 right-0 h-[28rem] w-[28rem] rounded-full" style={{ backgroundColor: '#00171f22', filter: 'blur(64px)' }} />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] rounded-full" style={{ backgroundColor: '#00a8e822', filter: 'blur(64px)' }} />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero */}
+      <section className="section pt-28 pb-12">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs backdrop-blur" style={{ backgroundColor: '#ffffffcc', border: '1px solid rgba(0,0,0,0.08)', color: '#00171f' }}>
+          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: '#00a8e8' }} />
+          200+ free questions to start
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm" style={{ color: '#00171f' }}>
+          Navigate front end interviews with ease
+        </h1>
+        <p className="mt-5 text-base sm:text-lg md:text-xl max-w-3xl mx-auto" style={{ color: '#6b7280' }}>
+          Practice high-quality front end interview questions with detailed solutions, crafted by senior engineers.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href="/signup" className="glass-button px-6 py-3 font-semibold" style={{ color: '#00171f', backgroundColor: '#ffffffcc' }}>
+            Get full access
+          </Link>
+          <Link href="/learn" className="px-6 py-3 rounded-full border border-white/40 text-white hover:bg-white/10 backdrop-blur transition-colors">
+            Explore questions
+          </Link>
+        </div>
+      </section>
+
+      {/* Cards */}
+      <section className="section pb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-stretch items-stretch">
+          {cards.map((c) => (
+            <Link key={c.title} href={c.href} className="group glass-card p-5 hover:translate-y-[-2px] transition-transform h-full flex flex-col min-h-[180px] md:min-h-[200px]">
+              <div className="flex items-center justify-between">
+                <h3 className="font-semibold text-lg tracking-tight" style={{ color: '#00171f' }}>
+                  {c.title}
+                </h3>
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/60 border border-black/10 group-hover:scale-110 transition-transform" style={{ color: '#00171f' }}>
+                  →
+                </span>
+              </div>
+              <div className="glass-divider my-4" />
+              <p className="text-sm leading-6" style={{ color: '#6b7280' }}>
+                {c.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Logos strip */}
+      <section className="section pb-24">
+        <div className="glass-card p-6">
+          <p className="text-center text-sm" style={{ color: '#6b7280' }}>By engineers from</p>
+          <div className="mt-4 grid grid-cols-3 sm:grid-cols-6 gap-4 opacity-90">
+            {[
+              "/vercel.svg",
+              "/next.svg",
+              "/globe.svg",
+              "/window.svg",
+              "/file.svg",
+              "/vercel.svg",
+            ].map((src, i) => (
+              <div key={i} className="flex items-center justify-center py-3">
+                <Image src={src} alt="logo" width={72} height={24} className="invert opacity-80" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Foreword */}
+      <Foreword />
+
+      {/* Testimonials */}
+      <Testimonials />
     </div>
   );
 }

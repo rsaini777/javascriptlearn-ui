@@ -116,6 +116,26 @@ body {
   color: #00171f;
 }
 
+/* Code block styling */
+pre.code-block {
+  margin-top: 1rem;
+  color: #e5e7eb;
+  border-radius: 12px;
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+pre.code-block code {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+/* Minimal token-like highlighting */
+.token-keyword { color: #93c5fd; }
+.token-function { color: #a7f3d0; }
+.token-string { color: #fca5a5; }
+.token-number { color: #fde68a; }
+.token-comment { color: #9ca3af; font-style: italic; }
+
 /* Mono font for code */
 code, pre, kbd, samp {
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

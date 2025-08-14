@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="mt-auto w-full">
-      <div className="w-full pb-16">
+      <div className="w-full ">
         <div className="glass-card p-6 md:p-10" style={{ borderRadius: 0, borderLeft: 'none', borderRight: 'none' }}>
           <div className="section grid grid-cols-1 md:grid-cols-6 gap-8">
 			{/* Brand + socials */}
@@ -76,14 +76,18 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-        </div>
-        <div className="section mt-6 text-xs flex flex-col sm:flex-row items-center justify-between" style={{ color: '#6b7280' }}>
-          <div>© {new Date().getFullYear()} Your Company. All rights reserved.</div>
-          <div className="mt-2 sm:mt-0 space-x-4">
-            <a href="#" style={{ color: '#6b7280' }}>Privacy Policy</a>
-            <a href="#" style={{ color: '#6b7280' }}>Terms of Service</a>
-            <span className="hidden sm:inline">·</span>
-            <span>Built with Next.js</span>
+          
+          {/* Copyright and Legal Links - Fixed positioning and styling */}
+          <div className="section mt-8 pt-6 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row items-center justify-between text-xs" style={{ color: '#6b7280' }}>
+              <div className="mb-2 sm:mb-0">© {new Date().getFullYear()} JavascriptLearning. All rights reserved.</div>
+              <div className="flex items-center space-x-4">
+                <a href="#" className="hover:text-[#00a8e8] transition-colors" style={{ color: '#6b7280' }}>Privacy Policy</a>
+                <a href="#" className="hover:text-[#00a8e8] transition-colors" style={{ color: '#6b7280' }}>Terms of Service</a>
+                <a href="#" className="hover:text-[#00a8e8] transition-colors" style={{ color: '#6b7280' }}>Cookie Policy</a>
+                <span className="hidden sm:inline text-gray-400">·</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

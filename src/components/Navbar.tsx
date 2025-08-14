@@ -26,6 +26,7 @@ export default function Navbar() {
                 { href: '/learn', label: 'Guides' },
                 { href: '/interview-questions', label: 'Interview Questions' },
                 { href: '/backend', label: 'Backend' },
+                { href: '/referrals', label: 'Referrals' },
               ].map((link) => (
                 <Link
                   key={link.href}

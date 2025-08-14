@@ -68,7 +68,7 @@ export default function InterviewQuestionsPage() {
             <div className="glass-card p-4 text-left">
               <div className="flex gap-4">
                 <div className="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden border" style={{ borderColor: 'rgba(0,0,0,0.08)' }}>
-                  <Image src={s.image} alt="" className="w-full h-full object-contain" />
+                  <Image src={s.image} alt="" width={0} height={0} className="w-full h-full object-contain" />
                 </div>
                 <div className="flex-1">
                   <div>

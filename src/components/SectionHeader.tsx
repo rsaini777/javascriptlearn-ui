@@ -1,7 +1,9 @@
+import { ReactNode } from 'react';
+
 type Props = {
   eyebrow?: string;
-  title: string;
-  subtitle?: string;
+  title: string | ReactNode;
+  subtitle?: string | ReactNode;
   center?: boolean;
 };
 

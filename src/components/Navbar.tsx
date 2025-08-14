@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { useAuth } from "@/contexts/AuthContext";
+import UserDropdown from "./UserDropdown";
 
 export default function Navbar() {
   // Keep state reserved for future mobile menu usage
   const [_isOpen] = useState(false);
+  const { user } = useAuth();
 
   return (
     <nav
@@ -51,22 +54,30 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Auth Buttons */}
+          {/* Auth Buttons or User Dropdown */}
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Link
-              href="/signin"
-              className="px-3 py-2 rounded-md transition-all"
-              style={{ color: "#00171f" }}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/signup"
-              className="ml-3 inline-flex items-center px-4 py-2 text-sm font-medium rounded-md transition-all"
-              style={{ color: "#00171f", backgroundColor: "#ffffffcc" }}
-            >
-              Sign up
-            </Link>
+            {user ? (
+              // User is logged in - show dropdown
+              <UserDropdown />
+            ) : (
+              // User is not logged in - show auth buttons
+              <>
+                <Link
+                  href="/signin"
+                  className="px-3 py-2 rounded-md transition-all"
+                  style={{ color: "#00171f" }}
+                >
+                  Sign in
+                </Link>
+                <Link
+                  href="/signup"
+                  className="ml-3 inline-flex items-center px-4 py-2 text-sm font-medium rounded-md transition-all"
+                  style={{ color: "#00171f", backgroundColor: "#ffffffcc" }}
+                >
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

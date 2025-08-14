@@ -27,7 +27,7 @@ const getDifficultyChip = (difficulty: string) => {
     case 'easy':
       return 'bg-[#00a8e8]/20 text-[#00a8e8] border border-[#00a8e8]/30';
     case 'medium':
-      return 'bg-yellow-400/20 text-yellow-100 border border-yellow-300/30';
+      return 'bg-[#00a8e8]/20 text-[#00a8e8] border border-[#00a8e8]/30';
     case 'hard':
       return 'bg-rose-400/20 text-rose-100 border border-rose-300/30';
     default:

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -9,18 +10,9 @@ export default function Footer() {
 			{/* Brand + socials */}
 			<div className="md:col-span-2 text-center md:text-left">
 				<div className="flex items-center justify-center md:justify-start gap-3">
-					<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-						<defs>
-							<linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0%" stopColor="#003459" />
-								<stop offset="100%" stopColor="#00a8e8" />
-							</linearGradient>
-						</defs>
-						<rect x="0" y="0" width="28" height="28" rx="6" fill="url(#brandGrad)" />
-						<circle cx="9" cy="9" r="3" fill="#ffffff" opacity="0.9" />
-						<circle cx="19" cy="19" r="5" fill="#ffffff" opacity="0.75" />
-					</svg>
+					<Image src={"/Images/logo.png"} alt='' width={30} height={10}></Image>
 					<div className="text-xl font-bold" style={{ color: '#00171f' }}>JavascriptLearning</div>
+          
 				</div>
 				<p className="mt-2 text-sm" style={{ color: '#6b7280' }}>
 					Level up your front end interviews with curated questions, guides and hands-on UI challenges.

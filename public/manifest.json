@@ -1,0 +1,21 @@
+{
+  "name": "JavaScriptLearning",
+  "short_name": "JS Learning",
+  "description": "Practice frontend interview questions and learn from detailed solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00171f",
+  "icons": [
+    {
+      "src": "/Images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

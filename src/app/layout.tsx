@@ -18,6 +18,35 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "JavaScriptLearning",
   description: "Practice frontend interview questions and learn from detailed solutions.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
+  openGraph: {
+    title: 'JavaScriptLearning',
+    description: 'Practice frontend interview questions and learn from detailed solutions.',
+    type: 'website',
+    images: [
+      {
+        url: '/Images/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'JavaScriptLearning Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JavaScriptLearning',
+    description: 'Practice frontend interview questions and learn from detailed solutions.',
+    images: ['/Images/logo.png'],
+  },
 };
 
 export default function RootLayout({

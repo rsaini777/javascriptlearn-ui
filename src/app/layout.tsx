@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { AuthProvider } from "@/contexts/AuthContext";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,13 +54,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-1749438252884284"></meta>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-1749438252884284"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -70,11 +74,32 @@ export default function RootLayout({
               process.env.NEXT_PUBLIC_GA_TRACKING_ID || "G-0HD1V0CS5Z"
             }
           />
-       
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
         </AuthProvider>
+
+        {/* ✅ Google AdSense script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1749438252884284"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
+        {/* ✅ Example AdSense ad unit */}
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-1749438252884284"
+          data-ad-slot="9850469009"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+
+        <Script id="adsbygoogle-init" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
       </body>
     </html>
   );
